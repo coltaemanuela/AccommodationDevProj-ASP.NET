@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="Accommodation-App/Accommodation-App.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="env" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Accommodation-App/Web.config">
+    <Files>
+      <File FileName="Accommodation-App/Web.config" Line="93" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

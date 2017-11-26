@@ -1,0 +1,41 @@
+body {
+	background-color: rgba(238, 238, 238, 0.81) !important;
+	background-image: url('./resources/room.jpg');
+	background-blend-mode: color;
+	background-position-y: 15%;
+}
+.email{
+    background-color: #fff;
+    color: cadetblue;
+    font-size: 15px;
+    font-weight: 100;
+}
+.signin-up{
+	margin-top:70px;
+}
+.signin-form{    
+	background-color: rgba(0,150, 100, 0.07) !important;
+	width:38%;
+	display:inline-block;
+	height:350px;
+    text-align: center;
+    color:gray;
+}
+
+.signin-button{
+	color: cadetblue;
+}
+.signup-form{
+	background-color:#fff;
+	display:inline-block;
+	width:60%;
+    float: left;
+    color:darkgrey;
+    height:350px;
+    text-align: center;
+}
+.signup-button{
+  color: #fff;
+  background-color: cadetblue;
+  margin:0 auto;
+}

@@ -1,0 +1,73 @@
+﻿@model Accommodation_App.Models.User
+@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="~/Content/login.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Content/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    -->
+</head>
+<body>
+
+    <div class="container">
+        <div class="signin-up">
+            <div class="signup-form">
+                <h3>Welcome</h3>
+                <p>
+                    You can register here. Simply enter your full name and email address, sort yourself out with a password and username and there you have it
+                    - you'll be a registered user. Simple as that!
+                </p>
+                <button class="signup-button btn"><a href="Register">Register here</a></button>
+               
+            </div>
+
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                //@Html.ValidationSummary(true, "Login failed. Check your login details."); check it later
+                <div class="signin-form">
+                    <h3>Or login to your account </h3>
+                    <form>
+                        <div class="row ">
+                            <div class="col-md-10 col-md-offset-1">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group" style="position: static;">
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                   <!-- <input type="email" class="form-control" id="input-id-1" placeholder="email"> -->
+                                </div>
+                                <div class="form-group" style="position: static;">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                   <!-- <input type="password" class="form-control" id="input-password-1" placeholder="password">-->
+                                </div>
+                                <button class="signin-button btn btn-default btn-block">Login </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+           
+            }
+            </div>
+        </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    </body>
+</html>
+
+
+

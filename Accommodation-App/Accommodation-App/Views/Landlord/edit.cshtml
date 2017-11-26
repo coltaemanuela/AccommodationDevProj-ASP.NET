@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = "../Shared/footer.cshtml";
+}
+
+@model Accommodation_App.Models.Cities[]
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Landlord</title>
+    <link rel="stylesheet" href="~/Content/landlordDashboard.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Content/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="profile-top"></div>
+    <div class="container profile-container">
+        <form name="form" enctype="multipart/form-data">
+            <div class="profile" style="background-image:url('../Content/resources/camera.png'); border: solid rgba(328, 328, 248, 0.99) 16px;"></div>
+            <div class="profile-data">
+                <div class="profile-edit-container">
+                    <input type="file" id="image" name="image" style="display: none" accept="image/*" />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="fullname" placeholder="Full name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <textarea class="form-control" name="bio" placeholder="bio">
+                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class=" btn profile-edit-save-button">SAVE CHANGES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+

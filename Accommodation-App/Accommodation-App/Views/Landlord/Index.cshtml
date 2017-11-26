@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Accommodation_App.Models.Property>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Landlord</title>
+    <link rel="stylesheet" href="~/Content/landlordDashboard.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Content/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="profile-top"></div>
+
+    <div class="profile">
+        <div class="logout glyphicon glyphicon-log-out"> <a href="/Login/Logout"> Logout </a> </div>
+    </div>
+
+    <div class="profile-info">
+        <div class="col-md-4" id="name-bio">
+            <h4> @ViewData["FirstName"] 
+                @ViewData["LastName"]
+            </h4>
+            <p>@ViewData["Role"]</p>
+            <p>@ViewData["Email"]   |  @ViewData["TelephoneNum"]</p>
+        </div>       
+            <a href="/Property/AddProperty"><span class="edit-profile">Add Advertisement</span></a>
+      
+    </div>
+    <div class="advertisements">
+        <p id="your-advs">Your Advertisements</p>   
+            <table class="active-inactive">
+                    <tr>
+                        <th> Announcement Title</th>
+                        <th> Status </th>
+                    </tr>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                     <tr>
+                          <td> @Html.ActionLink(@item.Name, "ViewProperty", "Landlord", new { id = item.OwnerId, pid = item.ProId }, null) </td> 
+                         @if (item.isApproved == true)
+                         {
+                            <td>Approved</td>
+                         }
+                         else
+                         {
+                            <td>Rejected</td>
+                         }</tr>
+                     }
+               </tbody>
+        </table>       
+    </div>
+
+</body>
+</html>
+
+
+

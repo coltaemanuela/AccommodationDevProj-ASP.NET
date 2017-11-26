@@ -1,0 +1,128 @@
+body{
+	background-color: #f0f0f0;
+}
+.profile-top{
+    color: gray;
+    text-align: center;
+    height:200px;
+    font-family: 'Helvetica'; 
+    position: relative;
+  	background-image: linear-gradient(to right, #19797d, cadetblue);
+}
+.profile{
+    background-image:url('./resources/profile.jpg');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    border-radius: 50%;
+    border: solid rgba(328, 328, 248, 0.9) 16px; 
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+    margin: 0 auto;
+    position: relative;
+ 	margin-top: -100px;
+}
+.profile-info{
+    height: 280px;
+    text-align: center;
+ 	box-shadow: 0px 11px 24px 0 rgba(62, 62, 70, 0.13);
+ 	color: dimgrey;
+}
+#name-bio{
+	float:none;
+	margin:0 auto;
+}
+#your-advs{
+	text-align:center;
+	color:gray;
+	font-weight:900;
+    padding-top: 30px;
+}
+
+#counters{
+	float:none;
+	margin:0 auto;
+	padding-top: 60px;
+}
+.adverstisements-no,
+.views-no{
+	width:42%;
+	display:inline-block;
+}
+.number{
+	font-size: 20px;
+	font-weight:900;
+}
+.counter-type{
+	color: cadetblue;
+	font-weight:700;
+}
+
+.advertisements{
+	background-color:#f0f0f0;
+	height:300px;
+	margin-top:5px;
+}
+.active-inactive {
+    width: 30%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 6px;
+    color: gray;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+thead tr {
+    text-align: center;
+}
+.active p:hover,
+.inactive:hover,
+.rejected:hover{
+	color:cadetblue;
+	font-weight:600;
+}
+.edit-profile{
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: gainsboro;
+    text-align: center;
+    padding-top: 11px;
+    margin-top: 55px;
+    margin-left: -100%;
+}
+.logout{
+ 	font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: gainsboro;
+    text-align: center;
+    padding-top: 11px;
+    float: right;
+    margin-right: -100%;
+    margin-top: 55px
+}
+
+.profile-edit-container{
+    width: 418px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    height: 380px;
+}
+.profile-edit-save-button{
+    width: 100%;
+    height: 38px;
+    border-radius: 6px;
+    background-color: cadetblue;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
