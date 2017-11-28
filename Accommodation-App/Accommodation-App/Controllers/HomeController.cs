@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Accommodation_App.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +11,21 @@ namespace Accommodation_App.Controllers
 {
     public class HomeController : Controller
     {
+
+        private StudAccommodationEntities1 SContextUser;
+        private DbSet<User> UserDb;
+
+        private StudAccommodationEntities1Entities SContextProp;
+        private DbSet<Property> Properties;
+
+        public HomeController()
+        {
+            SContextUser = new StudAccommodationEntities1();
+            UserDb = SContextUser.UserDb;
+
+            SContextProp = new StudAccommodationEntities1Entities();
+            Properties = SContextProp.Properties;
+        }
 
         [Route("Home/Index")]
         // it signifies Form Based authentication that this method can be accessed without authentication
@@ -20,6 +37,8 @@ namespace Accommodation_App.Controllers
 
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+
+               // ViewData["UserName"] = AO.UserName.ToString();
 
             return View();
         }

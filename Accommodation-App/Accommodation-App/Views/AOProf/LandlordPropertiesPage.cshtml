@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Accommodation_App.Models.Property>
+
+@{
+    ViewBag.Title = "Landlord Properties Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Navbar.cshtml";
+}
+
+<head>
+
+</head>
+
+<h2>Landlord's Properties Page</h2>
+<h4>The Advertisements made by @ViewData["UserName"] are: </h4>
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.ProId
+
+        @item.Name
+
+        @item.Type
+
+        @*@Html.ActionLink("The Property's Details: ", "PropertyDetails", "Landlord")*@
+
+        @Html.ActionLink("The Property's Details: ", "PropertyDetails", "AOProf", new { id = item.ProId }, null)
+
+    </p>
+
+    @*
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+        </td>
+    *@
+
+}

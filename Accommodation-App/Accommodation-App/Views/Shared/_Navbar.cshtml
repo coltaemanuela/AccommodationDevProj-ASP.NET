@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "_Navbar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="top-right btn-default">
+        <form action='@Url.Action("Logout","Login")' method='get'>
+            <input class="logout glyphicon glyphicon-log-out" type='submit' value='Logout' />
+        </form>
+    </div>
+</body>
+

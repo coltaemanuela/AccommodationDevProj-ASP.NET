@@ -14,7 +14,6 @@ namespace Accommodation_App.Models
     using System.Linq;
     using System.Web;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Data.SqlClient;
@@ -23,6 +22,7 @@ namespace Accommodation_App.Models
 
     public partial class User
     {
+        [Key]
         public int UserId { get; set; }
 
         [Required(ErrorMessage = "First Name is required ")]
@@ -37,7 +37,7 @@ namespace Accommodation_App.Models
         [Display(Name = "Username")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Email is required ")]
+        [Required(ErrorMessage = "Email is required")]
         [Display(Name = "Email")]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email Format is wrong")]
         public string Email { get; set; }
@@ -47,9 +47,10 @@ namespace Accommodation_App.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Confirm Password is required ")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match")]
         [DataType(DataType.Password)]
-        [DisplayName("Confirm Password")]
+        [Display(Name="Confirm Password")]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Role is required ")]

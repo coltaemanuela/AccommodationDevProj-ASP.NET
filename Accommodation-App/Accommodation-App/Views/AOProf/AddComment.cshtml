@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add Comment of Rejected the property</h2>
+<h2>Add Comment of Rejected Property</h2>
 
 @using (Html.BeginForm("AddComment", "AOProf", FormMethod.Post))
 {
@@ -19,8 +19,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.UAOComment, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.UAOComment, new { htmlAttributes = new { @class = "form-control" }, @cols = 10, @rows = 10 })
                 @Html.ValidationMessageFor(model => model.UAOComment, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.UAOComment, new { htmlAttributes = new { @class = "form-control" }, @cols = 10, @rows = 10 })
             </div>
         </div>
 
@@ -33,9 +33,7 @@
                 <input type="submit" value="Submit" class="btn btn-default" />
             </div>
         </div>
+
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

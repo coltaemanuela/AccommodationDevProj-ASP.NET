@@ -11,23 +11,72 @@ namespace Accommodation_App.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+    using System.Web;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
+    using System.Data.SqlClient;
+    using System.Web.Security;
+    using System.Data;
+
     public partial class Property
     {
+        //[Key]
         public int ProId { get; set; }
+
+       // [Required(ErrorMessage = "Property Name is required ")]
+       // [Display(Name = "Property Name")]
         public string Name { get; set; }
+
+       // [Required(ErrorMessage = "Description is required ")]
+       // [Display(Name = "Description")]
         public string Description { get; set; }
+
+       // [Required(ErrorMessage = "Type is required ")]
+      //  [Display(Name = "Property Type")]
         public string Type { get; set; }
+
+      ///  [Required(ErrorMessage = "Rooms Number is required ")]
+       // [Display(Name = "Rooms Number")]
         public int RoomNumber { get; set; }
+
+       // [Required(ErrorMessage = "Rent Price is required ")]
+       // [Display(Name = "Rent Price")]
+      //  [DataType(DataType.Currency)]
         public int RentPrice { get; set; }
+
+      //  [Display(Name = "Is Property Furnished")]
         public bool isFurnished { get; set; }
+
         public bool isApproved { get; set; }
+
+       // [Required(ErrorMessage = "Available Date is required ")]
+       // [Display(Name = "Available Date")]
+       // [DataType(DataType.Date)]
         public System.DateTime AvailableDate { get; set; }
+
+      //  [Required(ErrorMessage = "Expiry Date is required ")]
+      //  [Display(Name = "Expiry Date")]
+      //  [DataType(DataType.Date)]
         public System.DateTime ExpiryDate { get; set; }
+
+     //   [Required(ErrorMessage = "Address is required ")]
+      //  [Display(Name = "Address")]
         public string Address { get; set; }
+
         public int OwnerId { get; set; }
+
+      ///  [Required(ErrorMessage = "Created Date is required ")]
+      //  [Display(Name = "Created Date")]
+      //  [DataType(DataType.Date)]
         public System.DateTime CreatedDate { get; set; }
+
+       // [Required(ErrorMessage = "Photo is required ")]
+     //   [Display(Name = "Photo")]
         public string Photo { get; set; }
+
         public string UAOComment { get; set; }
+
     }
 }

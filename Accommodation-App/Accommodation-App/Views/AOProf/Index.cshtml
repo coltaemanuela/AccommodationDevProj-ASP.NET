@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Accommodation Officer Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+     = "~/Views/Shared/_Navbar.cshtml";
 }
 
 <head>
@@ -10,19 +11,8 @@
 </head>
 
 <h2>Hello Accommodation Officer @ViewData["UserName"]</h2>
-<h4> All Landlords: </h4>
+<h4> The Registered Landlords are: </h4>
 
-<div class="profile">
-    <div class="logout glyphicon glyphicon-log-out"> <a href="/Login/Logout"> Logout </a> </div>
-</div>
-
-
-@*
-
-    <p> @Html.ActionLink("Go to the profile page", "OpenLandlordProperties", "AOProf" ,new { id= item.UserId }) </p>
-    @Html.ActionLink("Go to the profile page", "OpenLandlordProperties", "AOProf")
-*@
-@*<table class="table"> *@
 @foreach (var item in Model)
 {
     <p>
@@ -32,19 +22,10 @@
 
         @item.LastName
 
-        @Html.ActionLink("Go to the Landlord's page", "OpenLandlordProperties", "AOProf", new { id = item.UserId }, null)
+        @Html.ActionLink("Go to the Landlord's page", "LandlordPropertiesPage", "AOProf", new { id = item.UserId }, null)
 
     </p>
 
-        @*
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-            </td>
-        *@
-
 }
 
-@* </table> *@
 

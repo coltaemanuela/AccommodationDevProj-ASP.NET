@@ -14,7 +14,6 @@ namespace Accommodation_App.Controllers
 
         private StudAccommodationEntities1 SContext;
         private DbSet<User> UserDb;
-        private User[] Users;
 
         public LoginController()
         {
@@ -23,7 +22,7 @@ namespace Accommodation_App.Controllers
         }
 
         [Route("Login/Register")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         //[ValidateAntiForgeryToken]
         [HttpGet]
         public ActionResult Register()
@@ -31,45 +30,47 @@ namespace Accommodation_App.Controllers
             return View();
         }
 
-        [Route("Login/Register")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Register(User tbl)
+        public ActionResult Register(User user)
         {
 
-            using (StudAccommodationEntities1 db = new StudAccommodationEntities1())
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    db.UserDb.Add(tbl);
-                    db.SaveChanges();
+                    UserDb.Add(user);
+                    SContext.SaveChanges();
+                    ModelState.Clear();
+                    ViewBag.SuccessMessage = "Registration is successfully completed";
+                    return RedirectToAction("RegisterSuccess");
                 }
                 catch (Exception x)
                 {
                     return Content(x.Message + ":" + x.StackTrace);
                 }
             }
-                ModelState.Clear();
-                ViewBag.SuccessMessage = "Registration is successfully completed";
-                return RedirectToAction("RegisterSuccess", tbl);
-
+            else
+            {
+            // re-display the registration form again
+                return View();
+            }
+               
         }
 
-        [Route("Home/Index")]
-        //[Authorize]
-        public ActionResult RegisterSuccess(User tbl)
+        [Route("Login/Login")]
+        public ActionResult RegisterSuccess()
         {
-            // return View(tbl);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Login");
 
         }
 
 
         [Route("Login/Login")]
         //[ValidateAntiForgeryToken]
-        //-- It signifies Form Based authentication that this method can be accessed without authentication --
-        [AllowAnonymous] 
+        //It signifies Form Based authentication that this method can be accessed without authentication 
+        //[AllowAnonymous] 
         [HttpGet]
         public ActionResult Login()
         {
@@ -77,9 +78,8 @@ namespace Accommodation_App.Controllers
         }
 
 
-        //[Route("Login/Login")]
         [ValidateAntiForgeryToken]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPost]
         public ActionResult Login(User user)
         {
@@ -108,9 +108,11 @@ namespace Accommodation_App.Controllers
                
                 //return Content("Login is OK "+"Hello"+ user.Email +" "+ user.Password + "with role:"+ obj.Role );
             }
-            else
-                ViewBag.SuccessMessage = "Incorrect Email or Password, please try again!";
-                return View(); 
+            else {
+                    // re-display the login 
+                    ViewBag.SuccessMessage = "Incorrect Email or Password, please try again!";
+                    return View();
+                }
             }
             catch (Exception x)
             {
@@ -119,11 +121,10 @@ namespace Accommodation_App.Controllers
         }
 
         [HttpGet]
-        //[Authorize]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Login");
         }
 
     }

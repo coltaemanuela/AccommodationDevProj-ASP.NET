@@ -137,7 +137,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandlordController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\PropertyController.cs" />
+    <Compile Include="Controllers\AdvertisementsController.cs" />
     <Compile Include="Controllers\TermsPrivacyController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -243,7 +243,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Landlord\Index.cshtml" />
-    <Content Include="Views\Landlord\edit.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\TermsPrivacy\Index.cshtml" />
     <Content Include="Views\TermsPrivacy\Privacy.cshtml" />
@@ -282,14 +281,16 @@
     <None Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\AOProf\Index.cshtml" />
-    <Content Include="Views\Property\Index.cshtml" />
-    <Content Include="Views\Property\AddProperty.cshtml" />
-    <Content Include="Views\Landlord\LandlordPropertiesPage.cshtml" />
-    <Content Include="Views\Property\AddSuccesss.cshtml" />
-    <Content Include="Views\AOProf\PropertyOfLandlord.cshtml" />
+    <Content Include="Views\Advertisements\Index.cshtml" />
+    <Content Include="Views\Landlord\AddProperty.cshtml" />
+    <Content Include="Views\AOProf\LandlordPropertiesPage.cshtml" />
+    <Content Include="Views\Landlord\AddSuccess.cshtml" />
+    <Content Include="Views\AOProf\PropertyDetails.cshtml" />
     <Content Include="Views\AOProf\AddComment.cshtml" />
-    <Content Include="Views\Property\ViewPropertyDetails.cshtml" />
+    <Content Include="Views\Advertisements\ViewAdvertisementDetails.cshtml" />
     <Content Include="Views\Landlord\ViewProperty.cshtml" />
+    <Content Include="Views\AOProf\AddCommentSuccess.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,6 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Navbar.cshtml";
 
 }
 
@@ -30,7 +31,7 @@
             <p>@ViewData["Role"]</p>
             <p>@ViewData["Email"]   |  @ViewData["TelephoneNum"]</p>
         </div>       
-            <a href="/Property/AddProperty"><span class="edit-profile">Add Advertisement</span></a>
+            <a href="/Landlord/AddProperty"><span class="edit-profile">Add Advertisement</span></a>
       
     </div>
     <div class="advertisements">
@@ -44,15 +45,23 @@
                     @foreach (var item in Model)
                     {
                      <tr>
-                          <td> @Html.ActionLink(@item.Name, "ViewProperty", "Landlord", new { id = item.OwnerId, pid = item.ProId }, null) </td> 
-                         @if (item.isApproved == true)
+                          <td> @Html.ActionLink(@item.Name, "ViewProperty", "Landlord", new { id = item.OwnerId, pid = item.ProId }, null) </td>
+                         
+                         @if (item.isApproved == true && item.UAOComment == null)
+                         {
+                            <td>Pending for Accommodation officer's comments</td>
+                         }
+                         
+                         else if (item.isApproved == true && item.UAOComment != null)
                          {
                             <td>Approved</td>
                          }
                          else
                          {
-                            <td>Rejected</td>
-                         }</tr>
+                             <td> Rejected </td>
+                         }
+
+                     </tr>
                      }
                </tbody>
         </table>       

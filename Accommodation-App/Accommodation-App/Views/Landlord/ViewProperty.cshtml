@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "ViewProperty";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Navbar.cshtml";
 }
 <div>
     <h2> Property Details</h2>
@@ -98,13 +99,20 @@
             <img src='~/UploadFiles/@Model.Photo' alt="Uploaded image" width="250px" />
         </dd>
 
-        @if (Model.isApproved == true)
+        @if (Model.isApproved == true && Model.UAOComment != null)
         {
             <dd>Admin Officer has approved your advertisement to be posted on the website</dd>
         }
+
+        else if (Model.isApproved == true && Model.UAOComment == null)
+        {
+            <dd> Your advertisement is under processing, pending waiting for the officer</dd>
+        }
+
         else
         {
-            <dt>Admin Officer has rejected your adevertisement. See the reason below:</dt>
+            <dt>Admin Officer has rejected your adevertisement. </dt>
+            <dt>See the reason below:</dt>
             <dd> <i>@Model.UAOComment</i></dd>
 
         }
