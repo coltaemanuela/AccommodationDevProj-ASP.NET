@@ -39,3 +39,27 @@ body {
   background-color: cadetblue;
   margin:0 auto;
 }
+footer {
+    background-color: cadetblue;
+    color: #fff;
+    bottom: 0px;
+    width: 100%;
+    width: 100%;
+    padding: 40px 0 50px 0;
+    position: relative;
+    z-index: 50;
+    text-align: center;
+}
+
+section {
+    border-radius: 0 0 50% 50%;
+    margin-left: -400px;
+    margin-right: -400px;
+    position: relative;
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+    section:nth-of-type(5) {
+        z-index: 97;
+    }

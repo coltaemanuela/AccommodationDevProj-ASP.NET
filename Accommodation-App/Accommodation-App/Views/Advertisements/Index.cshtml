@@ -37,8 +37,7 @@
                     <td> @p.RoomNumber</td>
                     <td> @p.Address</td>
                     <td>
-                        @Html.ActionLink("ViewAdvertisementDetails", "Advertisements", new { id = p.ProId })
-                        
+                        <a href='/Advertisements/ViewAdvertisementDetails/@p.ProId'>More...</a>
                     </td>
                 </tr>
             }

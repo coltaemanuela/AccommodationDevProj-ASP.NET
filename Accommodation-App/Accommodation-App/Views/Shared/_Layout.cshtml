@@ -4,17 +4,16 @@
     <title>@ViewBag.Title</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="~/Content/login.css" />
+
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <script src="~/Content/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-
-    @*
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/Scripts/jquery.validate*")
-    @Scripts.Render("~/Scripts/jquery.unobtrusive*")
-    *@
+    @RenderBody()
+    <section class="tiny-section"></section>
+    <footer>
+        <p id="author">Build with care by <br /> Emanuela Colta & Kholoud Alghamdi</p>
+    </footer>
 </body>
 </html>

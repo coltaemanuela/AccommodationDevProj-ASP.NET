@@ -56,7 +56,7 @@ namespace Accommodation_App.Controllers
 
         //One advertisement details visible to students. 
         //[AllowAnonymous]
-        [Route("/Advertisements/{id:int}")]
+        [Route("/Advertisements/ViewAdvertisementDetails/{id:int}")]
         [HttpGet]
         public ViewResult ViewAdvertisementDetails(int id)
         {

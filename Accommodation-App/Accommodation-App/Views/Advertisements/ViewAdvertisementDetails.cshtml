@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RoomNumber)
+          Number of Rooms:
         </dt>
 
         <dd>
@@ -37,31 +37,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RentPrice)
+            Rent Price:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RentPrice)
+            @Html.DisplayFor(model => model.RentPrice) £
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.isFurnished)
+            Furnished status:
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.isFurnished)
-        </dd>
-
+        @if (Model.isFurnished == true)
+        {
+            <dd>Furnished</dd>
+        }
+        else
+        {
+            <dd>Not furnished</dd>
+        }
         <dt>
-            @Html.DisplayNameFor(model => model.isApproved)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.isApproved)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.AvailableDate)
+          Available from:
         </dt>
 
         <dd>
@@ -69,7 +65,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExpiryDate)
+          Expiry Date:
         </dt>
 
         <dd>
@@ -85,15 +81,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OwnerId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedDate)
+           Created at:
         </dt>
 
         <dd>
@@ -105,7 +93,7 @@
         </dt>
 
         <dd>
-            <img src='~/UploadFiles/@Model.Photo' alt="Uploaded image" width="250px" />
+            <img src='~/UploadFiles/@Model.Photo' alt="Uploaded image" width="250px" class="accommodation-image" />
         </dd>
 
     </dl>

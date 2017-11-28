@@ -5,6 +5,8 @@
 }
 
 <body>
+    @RenderBody()
+
     <div class="top-right btn-default">
         <form action='@Url.Action("Logout","Login")' method='get'>
             <input class="logout glyphicon glyphicon-log-out" type='submit' value='Logout' />
